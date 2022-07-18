@@ -1,0 +1,3 @@
+(function(){
+    Sortable.create(sortMe, {});
+})()

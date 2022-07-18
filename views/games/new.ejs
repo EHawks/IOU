@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate')%>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<h3>Pool</h3>
+<div id="playerList" class="row">
+  <% for (let player of players) { %>
+        <button type="button" class="btn btn-secondary m-1" style="width: 10rem;""><%= player.fullName %></button>
+    <!-- <div class="col">
+      </div> -->
+        <%} %>
+      </div>
+      <div class="row">
+          <div class="col">
+              <h4>White</h4>
+              <div id="whiteTeam" class="bg-info" style="min-height: 4rem;">
+
+              </div>              
+          </div>
+          <div class="col">
+              <h4>Dark</h4>
+              <div id="darkTeam" class="bg-secondary" style="min-height: 4rem;">
+
+              </div>              
+          </div>
+      </div>
+
+<script>
+
+//Sortable.create(playerList, {});
+
+Sortable.create(whiteTeam, {
+    group: 'teams', // set both lists to same group
+    animation: 150
+});
+
+Sortable.create(darkTeam, {
+    group: 'teams',
+    animation: 150
+});
+
+Sortable.create(playerList, {
+    group: 'teams',
+    animation: 150
+});
+
+</script>
